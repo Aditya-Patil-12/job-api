@@ -1,9 +1,7 @@
-#### Setup
-
-```bash
-npm install && npm start
-```
-
+# Job API 
+- This a backend structure for API support on  
+  - Register , Login for User
+  -  CRUD Operations on Jobs 
 #### Database Connection
 
 1. Import connect.js
@@ -16,13 +14,6 @@ npm install && npm start
 - auth.js
 - jobs.js
 
-#### User Model
-
-Email Validation Regex
-
-```regex
-/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-```
 
 #### Register User
 
@@ -55,15 +46,3 @@ Email Validation Regex
 - xss-clean
 - express-rate-limit
 
-Swagger UI
-
-```yaml
-/jobs/{id}:
-  parameters:
-    - in: path
-      name: id
-      schema:
-        type: string
-      required: true
-      description: the job id
-```
