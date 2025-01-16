@@ -24,11 +24,13 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 // Post request Middle Ware
 app.use(express.json());
 // extra packages
-app.use(rateLimiter({
-  windowMs:15*60*100,
-  max:100,
-}));
-app.set('trust proxy',1)
+app.use(
+  rateLimiter({
+    windowMs: 15 * 60 * 100,
+    max: 100,
+  })
+);
+app.set("trust proxy", 1);
 
 app.use(helmet());
 app.use(cors());
@@ -36,7 +38,9 @@ app.use(xss());
 // ======= Routes ============
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/jobs", authenticateUser, jobsRouter);
-
+app.use("/", (req, res) => {
+  res.send("<h1>Welcome to Job API Section</h1>");
+});
 // ======= MiddleWare ==========
 app.use(notFoundMiddleware);
 // so everyError has got through this errorHandleMiddleWare .....
